@@ -4,6 +4,8 @@ const mongoose=require('mongoose');
 var methodOverride = require('method-override')
 const Place =require("./model/place.js");
 const Festival =require("./model/festival.js");
+const ExpressError=require("./utils/ExpressError.js")
+const wrapAsync=require("./utils/wrapAsync.js")
 let app=express();
 
 app.set("view engine","ejs");
@@ -30,7 +32,7 @@ async function main() {
   })
   
   //backend for adding places
-app.get("/BackendAddPlace",async(req,res,next)=>{
+app.get("/BackendAddPlace",wrapAsync(async(req,res,next)=>{
     let {dist}=req.query;
     if(dist){
         let results=await Place.find({dist:dist});
@@ -41,13 +43,13 @@ app.get("/BackendAddPlace",async(req,res,next)=>{
     res.render("index.ejs",{results})
 
  
-}) 
+}) )
  
 
 app.get("/addDb",(req,res,next)=>{ 
     res.render("placeDb.ejs")
 })
-app.post("/mysticOdisha",async(req,res,next)=>{
+app.post("/mysticOdisha",wrapAsync(async(req,res,next)=>{
     let{name,description,image,imagebn,dist,type,location,bio}=req.body;
     let s1=new Place({
         name:name,
@@ -60,8 +62,8 @@ app.post("/mysticOdisha",async(req,res,next)=>{
         bio:bio,
     })
    await s1.save()
-    res.redirect("/addDb")
-})
+    res.redirect("/addDb") 
+}))
 
 //update
 app.get("/place/:id/edit",async(req,res,next)=>{
@@ -90,8 +92,13 @@ app.put("/mysticOdisha/:id",async(req,res,next)=>{
 app.delete("/place/:id",async(req,res,next)=>{
     let {id}=req.params;
     await Place.findByIdAndDelete(id)
-    res.redirect("/BackendAddPlace")
+    res.redirect("/BackendAddPlace") 
+})
+
+app.use((err,req,res,next)=>{
+      let {status=500,message="client side error"}=err;
+      res.status(status).render("error.ejs",{message})
 })
 app.listen(3030,()=>{
     console.log("app listing on port 3030");
-}) 
+})  
