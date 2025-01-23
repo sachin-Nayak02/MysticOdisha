@@ -1,0 +1,395 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    overflow-x: hidden;
+  }
+  .navbar {
+    background: linear-gradient(90deg, rgba(36, 17, 174, 0.97) 0%, rgba(80, 234, 157, 0.97) 100%);
+    height: 10vh;
+    z-index: 1000;
+  }
+  
+  .navbar-brand {
+    position: relative;
+    left: 19px;
+    color: white !important;
+    font-size: xx-large !important;
+    font-family: "Josefin Sans", serif;
+    font-weight: 400;
+  }
+  
+  .Mystic {
+    position: absolute;
+    left: 80px;
+  }
+  
+  .Userico img {
+      width: 2vw;
+      height: 4vh; 
+    object-fit: cover;
+  }
+  
+  .sea {
+    padding: 10px;
+    width: 6vw;
+    height: 6vh;
+    object-fit: contain;
+    position: relative;
+    left: 36vw;
+  }
+  
+  .form-control {
+    position: relative;
+    left: 36vw;
+    width: 100%; /* Make the form control take the full width */
+    max-width: 250px; /* Optionally, set a max-width to avoid it being too large */
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 23px;
+  }
+  
+  .Mystic {
+    position: absolute;
+    left: 80px;
+  }
+  
+  /* Navbar */
+  
+  /* Add some transition for sliding effect */
+  /* Sidenav Styles */
+  #mySidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  #mySidenav li {
+    list-style: none;
+  }
+  
+  #mySidenav li a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    list-style: none;
+    padding-left: 8px;
+    margin-top: 1px;
+  }
+  
+  #mySidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* The 'close' button style */
+  .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* Style for the page content */
+  
+  .lists{
+    display: inline-flex;
+    flex-direction: column;
+  }
+  .list-item li{
+    display: inline-flex;
+  }
+  .list-item li img{
+    height: 53px;
+    width: 32px;
+  }
+  .nav-foot{
+        display: inline-flex;
+        flex-direction: column;
+        width: -webkit-fill-available;
+        position: absolute;
+        bottom: 2rem;
+  }
+  .dark-light,.logout{
+    display: inline-flex !important;
+  }
+  .nav-foot i{
+    font-size: 2rem;
+    padding-right: 20px;
+    padding-left: 2rem;
+    color: white;
+    padding-bottom: 15px;
+  }
+  .nav-foot h5{
+    color: aliceblue;
+    margin-top: 2px;
+  }
+  .nav-foot:hover{
+    color: white;
+  
+  }
+  .dark-mood{
+    background-color: black;
+    color: white;
+  }
+  
+  /* video */
+  .main-body{
+    position: relative;
+    overflow-x: hidden;
+    width: 100vw;
+  }
+  .video-box{
+    position: relative;
+    top: 4rem;
+    width: 100vw;
+    border: 2px solid black;
+    background: linear-gradient(45deg ,green,#fff,#287fe3);
+  }
+  video{
+    position: relative; 
+  
+    width: 100vw;
+    height: 90vh;
+  }
+  /* ---------------------------------video ------------------------------------- */
+  .mute-btn{
+    margin: 4rem;
+  }
+  #mute-btn i{
+    position: relative;
+    left: 18rem;
+    bottom: 4rem;
+    color: white;
+    font-size: 1.5rem;
+  }
+  #mute-btn i:hover{
+    cursor: pointer;
+  }
+
+  /* ---------------------------------crausal ------------------------------------- */
+  .card-slider {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .card-container {
+    display: flex;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .card {
+    flex: 0 0 33.333%;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    position: relative;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .card.active img {
+    transform: scale(1.2);
+    z-index: 2;
+  }
+  
+  .card:not(.active) {
+    opacity: 0.5;
+    transform: scale(0.9);
+    z-index: 1;
+  }
+  
+  .slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+  
+  .slider-controls button {
+   background: none;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .b {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 5vh;
+  }
+  
+  .discover {
+    max-width: max-content;
+    max-width: 200px;
+    position: absolute;
+    bottom: 1vh;
+   border-radius: 23px;
+  }
+  .a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 5vh;
+  }
+  
+  .slider-controls img{
+    width: 75px;
+    background: none;
+    position: relative;
+    top: 5vh;
+  }
+  /* =======================================near By===================================== */
+  .near-names{
+        display: inline-flex;
+        margin: auto;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 96vw;
+
+  }
+  .near-heading{
+    display: flex;
+    flex-direction: row-reverse;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .near-heading i{
+    font-size: 2rem;
+  }
+  .near{
+    height: 3rem;
+    width: 11rem;
+    border: 1px solid black;
+    margin-left: 4rem;
+    background: linear-gradient(45deg, #3fb1ac, transparent);
+    border-radius: 7px;
+    /* text-align: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .near-search{
+    margin-left: 40%;
+    margin-top: 2rem;
+    width: 20rem;
+  }
+  .near-radio{
+    display: none;
+  }
+.near-radio:checked ~ .near{
+  background-color: aqua;
+  transition: 0.5s;
+  	
+
+}
+/* ==============================================Footer================================== */
+.foot {
+
+  background: url("../svgs/footer-background.svg") no-repeat center center/cover;
+  color: white;
+  position: sticky;
+  width: 100%;
+  z-index: 7;
+
+}
+#followUs{
+  margin-left: 7rem;
+  margin-top: 3rem;
+}
+.foot h5 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.foot ul {
+  padding: 0;
+  list-style: none;
+  position: relative;
+  top: 5vh;
+}
+
+.foot ul li {
+  margin: 0 10px;
+
+}
+
+.foot a {
+  color: white;
+  text-decoration: none;
+
+}
+.foot ul li a:hover{
+  text-decoration: underline;
+}
+.foot ul li img {
+  /* max-width: 100%; */
+  height: 2.5rem;
+  width: 2.5rem;
+
+}
+.foot ul li img:hover{
+  transform:scale(1.2);
+  transition: 0.4s;
+}
+
+.border-top {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.img-fluid-odisha {
+  position: relative;
+  margin-left: 10vw;
+  height: 10rem;
+}
+
+.mys {
+  position: relative;
+  margin-left: 10vw;
+  font-family: "Jim Nightshade", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.QL {
+  margin-left: 200px;
+  width: max-content;
+
+}
+
+.border-top {
+  position: relative;
+  top: 40px;
+}
+
+.list-unstyled li {
+  font-size: large;
+  width: max-content;
+  padding: 6px;
+
+}
+
