@@ -1,0 +1,66 @@
+<% layout("/layout/boilerplate") -%>
+
+<div class="festival-main">
+
+    <div class="all-festivals-body dark-bg">
+        <h1>Summer</h1>
+        <% for(let festival of festivals){ %>
+            <div class="festivals">
+                <img src="<%= festival.image %>" alt="img of festivals">
+                <h3><%= festival.name %></h3>
+                <div class="bio-div-icon festival-right-arrow"><i class="fa-solid fa-angles-right"></i></div>
+                <div class="festival-bio">
+                    <p><%- festival.bio %></p>
+                    <div class="bio-div-icon festival-left-arrow"><i class="fa-solid fa-angles-left"></i></div>
+                </div>
+
+            </div>
+
+        <% } %>
+        <!-- ===================================Rain Season======================================= -->
+        <h1>Rainy</h1>
+        <% for(let festival of festivalsRainy){ %>
+            <div class="festivals">
+                <img src="<%= festival.image %>" alt="img of festivals">
+                <h3><%= festival.name %></h3>
+                <div class="bio-div-icon festival-right-arrow"><i class="fa-solid fa-angles-right"></i></div>
+                <div class="festival-bio">
+                    <p><%- festival.bio %></p>
+                    <div class="bio-div-icon festival-left-arrow"><i class="fa-solid fa-angles-left"></i></div>
+                </div>
+
+            </div>
+
+        <% } %>
+ <!-- ===================================================Winter Season======================================= -->
+             <h1>Winter</h1>
+        <% for(let festival of festivalsWinter){ %>
+            <div class="festivals">
+                <img src="<%= festival.image %>" alt="img of festivals">
+                <h3><%= festival.name %></h3>
+                <div class="bio-div-icon festival-right-arrow"><i class="fa-solid fa-angles-right arrows"></i></div>
+                <div class="festival-bio">
+                    <p><%- festival.bio %></p>
+                    <div class="bio-div-icon festival-left-arrow"><i class="fa-solid fa-angles-left arrows"></i></div>
+                </div>
+
+            </div>
+        <% } %>
+
+ <!-- ===================================================Autumn======================================= -->
+             <h1>Autumn</h1>
+        <% for(let festival of festivalsAutumn){ %>
+            <div class="festivals">
+                <img src="<%= festival.image %>" alt="img of festivals">
+                <h3><%= festival.name %></h3>
+                <div class="bio-div-icon festival-right-arrow"><i class="fa-solid fa-angles-right arrows"></i></div>
+                <div class="festival-bio">
+                    <p><%- festival.bio %></p>
+                    <div class="bio-div-icon festival-left-arrow"><i class="fa-solid fa-angles-left arrows"></i></div>
+                </div>
+
+            </div>
+        <% } %>
+     </div>
+</div>
+    

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="/css/contact.css"/>
+    <link rel="icon" href="/images/mysticlogo.jpg"/>
+    <title>Contact</title>
+</head>
+
+<body class="odd">
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-header">
+                    <h1 class="contact-title">Get in Touch</h1>
+                    <div class="title-icon">
+                        <i class="fa-sharp fa-regular fa-comment-dots"></i>
+                    </div>
+                </div>
+                <p class="contact-description">
+                    Exploring Odisha or need travel insights? Feel free to reach out!
+                    Whether you have questions, need recommendations, or just want to
+                    share your experience, I'd love to hear from you. I'll do my best to
+                    respond within 24 hours!
+                </p>
+                <div class="direct-contact">
+                    <a href="mailto:odishamystic@gmail.com" class="email-link">
+                        <i class="fas fa-envelope"></i>
+                        odishamystic@gmail.com
+                    </a>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <div class="form-group floating-label">
+                    <input type="text" name="name" id="name" required />
+                    <label for="name">Your Name</label>
+                    <div class="underline"></div>
+                </div>
+
+                <div class="form-group floating-label">
+                    <input type="email" name="email" id="email" required />
+                    <label for="email">Email Address</label>
+                    <div class="underline"></div>
+                </div>
+
+                <div class="form-group floating-label textarea-group">
+                    <textarea name="message" id="message" rows="5" required></textarea>
+                    <label for="message">Your Message</label>
+                    <div class="underline"></div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Send Message
+                    <i class="fa-sharp fa-regular fa-comment-dots"></i>
+                </button>
+            </form>
+        </div>
+
+        <div class="success-message" id="successMessage">
+            <i class="fas fa-check-circle"></i>
+            <p>Message sent successfully!</p>
+        </div>
+    </section>
+    <script src="/js/contact.js"></script>
+</body>
+
+</html>

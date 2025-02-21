@@ -1,0 +1,84 @@
+<% layout("/layout/boilerplate") -%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Odisha Tourism</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/placepage.css">
+</head>
+
+    <div class="contai">
+        <div class="hero-section scroll-reveal">
+            <img src="<%= distName.image %>" alt="<%= distName.name %>" class="hero-image">
+            <div class="hero-content">
+                <h1 class="pname"><%= distName.name %></h1>
+                <h2 class="dname"><%= distName.description %></h2>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="details">
+                <div class="content-section scroll-reveal">
+                    <div class="section-title">
+                        <i class="fas fa-binoculars section-icon"></i>
+                        <h3 class="headi">Overview</h3>
+                    </div>
+                    <p class="bio"><%- distName.bio %></p>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <div class="scroll-reveal">
+                    <iframe
+                        src="<%= distName.location %>"
+                        allowfullscreen
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="action-buttons scroll-reveal" >
+                    <!-- <form action="/mysticodisha/like/<%=distName._id %>" method="get">
+                    <button class="icon-btn" id="likeBtn" >
+                        <i class="fas fa-heart"></i>
+                        <span>Like</span>
+                    </button>
+                </form> -->
+                    <button class="icon-btn share" id="shareBtn">
+                        <i class="fas fa-share-alt"></i>
+                        <span>Share</span>
+                    </button>
+                </div>
+            </div>
+            <br><br><br><br><br><br><br><br><br><br>
+            
+        <br><br><br><br><br><br><br><br><br><br>
+        
+        </div>
+
+   
+    <div class="slider-container">
+        <div class="slide1">
+            <% for(let place of places) { %>
+                <div class="item1" style="background-image: url('<%= place.image %>');">
+                    <div class="content1">
+                        <div class="name1">
+                            <%= place.name %>
+                        </div>
+                        <div class="des dark-mood-text">
+                            <%- place.description %>
+                        </div>
+                        <a href="/mysticodisha/destination/<%= place.dist %>/<%= place.name %>"
+                            class="btn btn-outline-info"> <button class="btn btn-outline-info">Explore</button></a>
+                    </div>
+                </div>
+                <% } %>
+        </div>
+        <div class="button">
+            <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+</div>

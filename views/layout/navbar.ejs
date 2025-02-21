@@ -1,0 +1,59 @@
+<!-- navigation -->
+ <div class="navbar fixed-top">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+       <!-- Hamburger Menu Button -->
+       <button 
+       class="navbar-toggler custom-toggler" 
+       type="button" 
+       onclick="openNav()" 
+       aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+
+<!-- Side Navigation -->
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <ul>
+    <div class="lists">
+    <div class="list-item"><li><img class="home" src="/svgs/home.svg" alt="s" ><a href="/">Home</a></li></div>
+    <div class="list-item"><li><img class="dest" src="/svgs/destination.svg" alt="" ><a href="/mysticodisha/destination">Destination</a></li></div>
+    <div class="list-item"><li><img class="attraction" src="/svgs/attarction.svg" alt="" ><a href="/mysticodisha/attraction">Attraction</a></li></div>
+    <div class="list-item"><li><img class="festival" src="/svgs/festival.svg" alt="" ><a href="/mysticodisha/festival">Festival</a></li></div>
+    <div class="list-item"><li><img class="about" src="/svgs/aboutOdisha.svg" alt="" ><a href="/mysticodisha/aboutodisha">About Odisha</a></li></div>
+    <div class="list-item"><li><img class="contact" src="/svgs/contactUs.svg" alt="" ><a href="/mysticodisha/ContactUs">Contact Us</a></li></div>
+    <!-- <li</div>><img class="home" src="logout.svg" alt="" ><a href="/contact">Contact Us</a></li> -->
+  </div>
+  <br><br>
+</ul>  
+<div class="nav-foot">
+
+<div class="dark-light btn">
+  <i id="icon-mood" class="fas fa-moon "></i>
+  <h5 >Dark Mode</h5>
+</div>
+ <a href="/logout"> <div class="logout btn">
+    <i class="fa-solid fa-arrow-right-from-bracket "></i>
+    <h5 >Logout</h5>
+  </div>
+</a>
+</div>     
+</div>
+      <!-- Navbar Brand -->
+       <div class="Mystic">
+           <!-- <a class="navbar-brand poppins-regular poppins-medium " href="#">Mystic Odisha</a> -->
+           <a class="navbar-brand" href="/" style="cursor: pointer;">MYSTIC&nbsp;<div id="loader" class="loader" ></div>DISHA</a>
+       </div>
+      <!-- Search Bar -->
+      <form action="/submit" method="post" class="d-flex" role="search">
+        <input class="form-control me-2" type="search" name="placeName" placeholder="Enter Place Name" aria-label="Search"  id="searchBox"  autocomplete="off" />
+        <button type="button" class="sea" style="background:none;"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i></button>
+        <ul id="suggestions"></ul>
+      </form>    
+      <!-- User Icon -->
+      <div class="Userico">
+        <a href="/mysticodisha/user">
+          <img src="/svgs/Home/Navbar/userLogo.svg" alt="User Icon" class="rounded-circle">
+        </a>
+      </div>
+    </div>
+  </div>

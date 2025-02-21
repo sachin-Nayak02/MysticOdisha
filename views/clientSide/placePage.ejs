@@ -1,0 +1,108 @@
+<% layout("/layout/boilerplate") -%>
+<!-- ==== CSS File: destination_dist.css ==== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Odisha Tourism</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/placepage.css">
+</head>
+<body>
+    <div class="contai">
+        <div class="hero-section scroll-reveal">
+            <img src="<%= distPlaces.image %>" alt="<%= distPlaces.name %>" class="hero-image">
+            <div class="hero-content">
+                <h1 class="pname"><%= distPlaces.name %></h1>
+                <h2 class="dname"><%= distPlaces.description %></h2>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="details">
+                <div class="content-section scroll-reveal">
+                    <div class="section-title">
+                        <i class="fas fa-binoculars section-icon"></i>
+                        <h3 class="headi">Overview</h3>
+                    </div>
+                    <p class="bio"><%- distPlaces.overview %></p>
+                </div>
+
+                <div class="content-section scroll-reveal">
+                    <div class="section-title">
+                        <i class="fas fa-landmark section-icon"></i>
+                        <h3 class="headi">History & Significance</h3>
+                    </div>
+                    <p class="bio"><%- distPlaces.historyAndSignificance %></p>
+                </div>
+
+                <div class="content-section scroll-reveal">
+                    <div class="section-title">
+                        <i class="fas fa-hiking section-icon"></i>
+                        <h3 class="headi">Tourism Activities</h3>
+                    </div>
+                    <p class="bio"><%- distPlaces.tourismActivities %></p>
+                </div>
+
+                <div class="content-section scroll-reveal">
+                    <div class="section-title">
+                        <i class="fas fa-calendar-alt section-icon"></i>
+                        <h3 class="headi">Best Time to Visit</h3>
+                    </div>
+                    <p class="bio highlight-text"><%- distPlaces.bestTimeToVisit %></p>
+                </div>
+
+                <div class="content-section scroll-reveal">
+                    <div class="section-title">
+                        <i class="fas fa-map-marked-alt section-icon"></i>
+                        <h3 class="headi">How to Reach</h3>
+                    </div>
+                    <p class="bio"><%- distPlaces.howToReach %></p>
+                </div>
+
+                <div class="content-section scroll-reveal">
+                    <div class="section-title">
+                        <i class="fas fa-lightbulb section-icon"></i>
+                        <h3 class="headi">Interesting Facts</h3>
+                    </div>
+                    <p class="bio"><%- distPlaces.interestingFact %></p>
+                </div>
+
+                <div class="content-section scroll-reveal">
+                    <div class="section-title">
+                        <i class="fas fa-map-pin section-icon"></i>
+                        <h3 class="headi">Nearby Attractions</h3>
+                    </div>
+                    <p class="bio"><%- distPlaces.nearbyattraction %></p>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <div class="scroll-reveal">
+                    <iframe
+                        src="<%= distPlaces.location %>"
+                        allowfullscreen
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="action-buttons scroll-reveal" >
+                    <form action="/mysticodisha/like/<%=distPlaces._id %>" method="get">
+                    <button class="icon-btn" id="likeBtn" >
+                        <i class="fas fa-heart"></i>
+                        <span>Like</span>
+                    </button>
+                </form>
+                    <button class="icon-btn" id="shareBtn">
+                        <i class="fas fa-share-alt"></i>
+                        <span>Share</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/placepage.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+.abou{
+    position: relative;
+    top: 5rem;
+}
+/* About Us Section Styling */
+.about-section {
+    font-family: 'Poppins', sans-serif;   
+}
+
+.about-section h1,
+.about-section h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #7ab9f9;
+    font-weight: 600;
+}
+
+.about-section p.aboup {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* Team Member Cards */
+.team-member {
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.team-member img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+}
+
+.team-member h4 {
+    color: #2c3e50;
+    margin: 0.8rem 0;
+    font-size: 1.3rem;
+}
+
+.team-member p {
+    color: #666;
+    font-size: 0.95rem;
+    min-height: 80px; 
+}
+
+/* Technology Icons */
+.tech-icons {
+    margin: 2rem 0;
+}
+
+.list-inline-item {
+    margin: 0 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.list-inline-item:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .team-member {
+        margin-bottom: 2.5rem;
+    }
+    
+    .team-member img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .list-inline-item {
+        margin: 0 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .team-member p {
+        min-height: auto;
+    }
+    
+    .list-inline-item {
+        margin: 0 0.5rem;
+    }
+}
+
+/* Section Spacing */
+.about-section .row {
+    margin-bottom: 4rem;
+}
+
+/* Mission/Vision Boxes */
+.about-section .col-md-6 {
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin: 1rem 0;
+}
+
+/* Technology Section Header */
+.about-section h2.text-center {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid #eee;
+}
+.team{
+    display: inline-flex;
+}

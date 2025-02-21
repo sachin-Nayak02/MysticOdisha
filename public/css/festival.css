@@ -1,0 +1,82 @@
+.all-festivals-body{
+    margin-top: 4rem;
+}
+h1{
+    margin-left: 2.2rem;
+}
+.festivals{
+    height: 22rem;
+    width: 35rem;
+    border: 2px solid;
+    margin: 2rem;
+    /* flex-direction: column; */
+    /* flex-wrap: nowrap; */
+    text-align: center;
+    position: relative;
+    border-radius: 10px;
+}
+.festivals img{
+    height: 21.8rem;
+    width: 34.8rem;
+    position: relative;
+    z-index: 2;
+    border-radius: 8px;
+}
+.festivals h3{
+    position: relative;
+    bottom: 4rem;
+    padding: 1rem;
+    color: red;
+    z-index: 2;
+}
+.festivals .bio-div-icon{
+    position: relative;
+    height: 6rem;
+    width: 2.6rem;
+    border-top-right-radius: 11px;
+    border-bottom-right-radius: 11px;
+    bottom: 86%;
+    left: 100%;
+    background: linear-gradient(45deg, #1142e1, #a747eb, #ffffff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transition: 0.2s 0.2s;
+}
+.festivals .festival-bio{
+    height: 21.5rem;
+    width: 56rem;
+    border: 2px solid black;
+    border-image: linear-gradient(45deg, #1142e1, #21d71a, red)1;
+    position: relative;
+    left: -300%;
+    bottom: 148%;
+    transition: ease-in-out 0.8s;
+}
+.festivals .festival-bio p{
+    font-size: medium;
+    height: 21rem;
+    width: 53rem;
+    padding: 5px;
+    /* border: 2px solid blueviolet; */
+}
+.festival-bio .festival-left-arrow{
+    bottom: 15rem;
+    left: 53.2rem;
+    border-top-left-radius: 11px;
+    border-bottom-left-radius: 11px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    transition: 0.6s;
+}
+.festival-right-arrow .fa-solid:hover{
+    position: relative;
+    color: wheat;
+    left: 2px;
+}
+.festival-left-arrow .fa-solid:hover{
+    position: relative;
+    color: wheat;
+    left: 2px;
+}

@@ -1,218 +1,252 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap Navbar</title>
-    <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="utility.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- google font link -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Domine:wght@400..700&family=Italianno&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
-    
-  </head>
-  <body class="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mystic Odisha</title>
+  <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="./css/searchReco.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Domine:wght@400..700&family=Italianno&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Tangerine:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <link rel="icon" href="./images/mysticlogo.jpg"/>
+</head>
 
-    <!-- navigation -->
-    <div class="navbar fixed-top">
-      <div class="container-fluid d-flex align-items-center justify-content-between">
-         <!-- Hamburger Menu Button -->
-         <button class="navbar-toggler" type="button" onclick="openNav()" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-         </button>
+<body >
 
-  <!-- Side Navigation -->
-  <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <ul>
-      <div class="lists">
-      <div class="list-item"><li><img class="home" src="./svgs/home.svg" alt="s" ><a href="/home">Home</a></li></div>
-      <div class="list-item"><li><img class="dest" src="./svgs/destination.svg" alt="" ><a href="/destination">Destination</a></li></div>
-      <div class="list-item"><li><img class="attraction" src="./svgs/attarction.svg" alt="" ><a href="/attraction">Attraction</a></li></div>
-      <div class="list-item"><li><img class="festival" src="./svgs/festival.svg" alt="" ><a href="/festival">Festival</a></li></div>
-      <div class="list-item"><li><img class="about" src="./svgs/aboutOdisha.svg" alt="" ><a href="/about">About Odisha</a></li></div>
-      <div class="list-item"><li><img class="contact" src="./svgs/contactUs.svg" alt="" ><a href="/contact">Contact Us</a></li></div>
-      <!-- <li</div>><img class="home" src="logout.svg" alt="" ><a href="/contact">Contact Us</a></li> -->
-    </div>
-    <br><br>
-  </ul>  
-  <div class="nav-foot">
+  <!-- navigation -->
+  <div class="navbar fixed-top">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+      <!-- Hamburger Menu Button -->
+      <button 
+      class="navbar-toggler custom-toggler" 
+      type="button" 
+      onclick="openNav()" 
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div class="dark-light btn">
-    <i id="icon-mood" class="fas fa-moon "></i>
-    <h5 >Dark Mood</h5>
-  </div>
-    <div class="logout btn">
-      <i class="fa-solid fa-arrow-right-from-bracket "></i>
-      <h5 >Logout</h5>
-    </div>
-  </div>     
-</div>
-        <!-- Navbar Brand -->
-         <div class="Mystic">
-             <!-- <a class="navbar-brand poppins-regular poppins-medium " href="#">Mystic Odisha</a> -->
-             <a class="navbar-brand">MYSTIC ODISHA</a>
-         </div>
-        <!-- Search Bar -->
-        <form action="/submit" method="post" class="d-flex" role="search">
+      <!-- Side Navigation -->
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <ul>
+          <div class="lists">
+            <div class="list-item">
+              <li><img class="home" src="./svgs/home.svg" alt="s"><a href="/">Home</a></li>
+            </div>
+            <div class="list-item">
+              <li><img class="dest" src="./svgs/destination.svg" alt=""><a
+                  href="/mysticodisha/destination">Destination</a></li>
+            </div>
+            <div class="list-item">
+              <li><img class="attraction" src="./svgs/attarction.svg" alt=""><a
+                  href="/mysticodisha/attraction">Attraction</a></li>
+            </div>
+            <div class="list-item">
+              <li><img class="festival" src="./svgs/festival.svg" alt=""><a href="/mysticodisha/festival">Festival</a>
+              </li>
+            </div>
+            <div class="list-item">
+              <li><img class="about" src="./svgs/aboutOdisha.svg" alt=""><a href="/mysticodisha/aboutodisha">About
+                  Odisha</a></li>
+            </div>
+            <div class="list-item">
+              <li><img class="contact" src="./svgs/contactUs.svg" alt=""><a href="/mysticodisha/ContactUs">Contact Us</a>
+              </li>
+            </div>
+            <!-- <li</div>><img class="home" src="logout.svg" alt="" ><a href="/contact">Contact Us</a></li> -->
+          </div>
+          <br><br>
+        </ul>
+
+        <div class="nav-foot">
+          <div class="dark-light btn">
+            <i id="icon-mood" class="fas fa-moon "></i>
+            <h5>Dark Mode</h5>
+          </div>
+          <a href="/logout"> <div class="logout btn">
+            <i class="fa-solid fa-arrow-right-from-bracket "></i>
+            <h5 >Logout</h5>
+          </div>
+        </a>
+        </div>
+      </div>
+      <!-- Navbar Brand -->
+      <div class="Mystic">
+        <!-- <a class="navbar-brand poppins-regular poppins-medium " href="#">Mystic Odisha</a> -->
+        <a class="navbar-brand" href="/" style="cursor: pointer;">MYSTIC&nbsp;<div id="loader" class="loader" ></div>DISHA</a>
+      </div>
+      <!-- Search Bar -->
+      <!-- <form action="/submit" method="post" class="d-flex" role="search">
           <input class="form-control me-2" type="search" name="name" placeholder="Search" aria-label="Search">
             <img class="sea" src="./svgs/search.svg" alt="">
-        </form>      
-        <!-- User Icon -->
-        <div class="Userico">
-          <img src="./svgs/userLogo.svg" alt="User Icon" class="rounded-circle">
-        </div>
-      </div>
-    </div>
-<!--===========================================main body================================= -->
-    <!-- video -->
-     <div class="main-body">
-  <div class="video-box">
-    <video  loop="true" id="video-id"
-    autoplay="true" muted>
-    <source src="./svgs/mysticOdishaVideo.mp4" type="video/mp4">
-    
-    Your browser does not support the video tag.
-  </video>
-  <div class="controls">
-    <!-- <button id="play-btn">Play</button> -->
-    <div id="mute-btn"><i class="fa-solid fa-volume-xmark"></i></div>
-</div>
-  </div>
-  <br><br><br>
-  <div class="container mt-5">
-    <div class="card-slider">
-      <div class="card-container" id="cardContainer">
-        <div class="card" style="width: 18rem;">
-          <img src="https://assets-news.housing.com/news/wp-content/uploads/2022/07/24234725/Odisha3.jpg" class="card-img-top" alt="Image 1">
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img src="https://www.patratravels.com/wp-content/uploads/2021/03/odisha-tourism-package-and-places-1.jpg" class="card-img-top" alt="Image 2">
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img src="https://tourld.com/wp-content/uploads/2023/09/Untitled-design-53.jpg" class="card-img-top" alt="Image 3">
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img src="https://odishatour.in/wp-content/uploads/2023/10/Deodhara-picnic-spot-rourkela.jpg" class="card-img-top" alt="Image 4">
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img src="https://www.patratravels.com/wp-content/uploads/2023/02/go-for-the-ultimate-fun-at-the-best-picnic-spots-in-odisha.jpg" class="card-img-top" alt="Image 5">
-        </div>
-      </div>
-    </div>
-    <div class="a slider-controls">
-      <button  id="prevBtn" class="slick-arrow" fdprocessedid="664449" ><img class="arrow" src="./svgs/leftArrow.svg" alt=""></button>
-      <button  id="nextBtn" class="slick-arrow" fdprocessedid="yi278b"><img class="arrow" src="./svgs/rightArrow.svg" alt=""></button>
-    </div>
-    <!-- button -->
-    <div class="b">
-      <button type="button" class="btn btn-outline-info btn-lg discover">Discover More</button>
-  </div>
-  </div>
-  <br><Br></Br><br>
+        </form>       -->
 
 
-  <div class="nearby-box">
-    <div class="near-heading">
-      <i class="fa-regular fa-building"></i>
-      <h3>Near By</h3>
+      <form action="/submit" method="post" class="d-flex" role="search">
+        <input class="form-control me-2" type="search" name="placeName" placeholder="Enter Place Name"
+          aria-label="Search" id="searchBox" autocomplete="off" />
+          <button type="button" class="sea" style="background:none;"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i></button>
+        <ul id="suggestions"></ul>
+      </form>
+
+      <!-- User Icon -->
+      <div class="Userico">
+        <a href="/mysticodisha/user">
+          <img src="/svgs/Home/Navbar/userLogo.svg" alt="User Icon" class="rounded-circle">
+        </a>
+      </div>
+    </div>
+  </div>
+  <!--===========================================main body================================= -->
+  <!-- video -->
+  <div class="main-body dark-bg">
+    <div class="video-box">
+      <video loop="true" id="video-id" autoplay="true" muted>
+        <source src="/video/mysticOdishaVideo.mp4" type="video/mp4">
+
+        Your browser does not support the video tag.
+      </video>
+      <div class="controls">
+        <!-- <button id="play-btn">Play</button> -->
+        <div id="mute-btn"><i class="fa-solid fa-volume-xmark "></i></div>
+      </div>
+    </div>
+    <br><br><br>
+    <!-- =======================================slider image============================== -->
+    <%- include('crousel') %>
+    <br><Br></Br><br>
+
+    <!-- ==========================================near by ==================================== -->
+
+    <div class="nearby-box">
+      <div class="near-heading">
+        <i class="fa-regular fa-building"></i>
+        <h3>Near By</h3>
+      </div>
+      <br>
+
+      <div class="near-names">
+        <label for="hotel">
+          <input class="near-radio" type="radio" name="nearBy" id="hotel" value="resturant">
+          <div class="near">Resturant</div>
+        </label>
+
+        <label for="station">
+          <input class="near-radio" type="radio" name="nearBy" id="station" value=" oil station">
+          <div class="near">Oil Station</div>
+
+        </label>
+
+        <label for="airport">
+          <input class="near-radio" type="radio" name="nearBy" id="airport" value="airport">
+          <div class="near">Airport</div>
+
+        </label>
+
+        <label for="hospital">
+          <input class="near-radio" type="radio" name="nearBy" id="hospital" value="hospital">
+          <div class="near">Hospital</div>
+
+        </label>
+
+        <label for="temple">
+          <input class="near-radio" type="radio" name="nearBy" id="temple" value="temple">
+          <div class="near">Temple</div>
+
+        </label>
+
+        <label for="railway">
+          <input class="near-radio" type="radio" name="nearBy" id="railway" value="railway station">
+          <div class="near">Railway Station</div>
+
+        </label>
+
+      </div>
+      <br><br>
+      <button class=" btn btn-outline-info near-search">Search</button>
     </div>
     <br>
 
-    <div class="near-names">
-    <label for="hotel">
-      <input class="near-radio"  type="radio" name="nearBy" id="hotel" value="resturant">
-      <div class="near">Resturant</div>
-    </label>
+    <br><br><br>
+    <!-- -------------------------------DB Places ------------------------------------->
+    <h2 id="db-place-dist" class="dark-mood-text">Beauty Of <%= places[1].dist %>
+    </h2>
+    <br>
+    <div class="db-place">
+      <% if(places){ %>
+        <% for(place of places){ %>
 
-    <label for="station">
-      <input class="near-radio" type="radio" name="nearBy" id="station" value=" oil station">
-      <div class="near">Oil Station</div>
-       
-      </label>
+          <div class="card-place ">
+            <a href="/mysticodisha/destination/<%= place.dist %>/<%= place.name %>"><img src="<%= place.image %>"
+                alt="<%= place.name %>">
+              <h5 class="dark-mood-text">
+                <%= place.name %>
+              </h5>
+              <h6 class="dark-mood-text">
+                <%= place.description %>
+              </h6>
+            </a>
+          </div>
 
-    <label for="airport">
-      <input class="near-radio" type="radio" name="nearBy" id="airport" value="airport">
-      <div class="near">Airport</div>
-      
-      </label>
+          <%} %>
+            <% } %>
+    </div>
 
-    <label for="hospital">
-      <input class="near-radio" type="radio" name="nearBy" id="hospital" value="hospital">
-      <div class="near">Hospital</div>
-        
-      </label>
-
-    <label for="temple">
-      <input class="near-radio" type="radio" name="nearBy" id="temple" value="temple">
-      <div class="near">Temple</div>
-        
-      </label>
-
-    <label for="railway">
-      <input class="near-radio" type="radio" name="nearBy" id="railway" value="railway station">
-      <div class="near">Railway Station</div>
-        
-      </label>
-
-  </div>
-  <br><br>
-  <button class="btn btn-outline-info near-search">Search</button>
-</div>
- <br>
-
-
-
-<br><br><br>
-
-<!-- ------------------------------footer----------------------------------------------- -->
-<footer class="foot py-5">
-  <div class="container">
-      <div class="row">
+    <!-- ------------------------------footer----------------------------------------------- -->
+    <footer class="foot py-5">
+      <div class="container">
+        <div class="row">
           <div class="col-md-3">
-              <h2 id="followUs" >Follow us</h2>
-              <ul class="list-unstyled d-flex">
-                  <li><a href="#"><img src="../svgs/footer-facebook.svg" alt="Facebook" ></a></li>
-                  <li><a href="#"><img src="../svgs/footer-x.svg" alt="Twitter" ></a></li>
-                  <li><a href="#"><img src="../svgs/footer-instagram.svg" alt="Instagram" ></a></li>
-                  <li><a href="#"><img src="./svgs/footer-youtube.svg" alt="YouTube" ></a></li>
-                  <li><a href="odishamystic@gmail.com"><img src="../svgs/footer-gmail.svg" alt="Gmail" ></a></li>
-              </ul>
+            <h2 id="followUs">Follow us</h2>
+            <ul class="list-unstyled d-flex">
+              <li><a href="#"><img src="/svgs/Home/Footer/footer-facebook.svg" alt="Facebook"></a></li>
+              <li><a href="#"><img id="X" src="/svgs/Home/Footer/footer-x.svg" alt="Twitter"></a></li>
+              <li><a href="https://www.instagram.com/odishamystic?igsh=YnRyZWJveXZ5dWwx"><img src="/svgs/Home/Footer/footer-instagram.svg" alt="Instagram"></a></li>
+              <li><a href="#"><img src="/svgs/Home/Footer/footer-youtube.svg" alt="YouTube"></a></li>
+              <li><a href="mailto:odishamystic@gmail.com?subject=Website%20Enquiry" aria-label="Contact via Gmail"class="email-link"><img src="/svgs/Home/Footer/footer-gmail.svg" alt="Email us via Gmail" width="32" height="32" loading="lazy"></a></li>
+            </ul>
           </div>
           <div class="col-md-3">
-              <h3 class="QL">Quick Links</h3>
-              <ul class="list-unstyled" >
-                  <li ><a href="#"class="QL">Feedback</a></li>
-                  <li ><a href="#"class="QL">FAQs</a></li>
-                  <li ><a href="#"class="QL">Contact Us</a></li>
-                  <li ><a href="#"class="QL">About Us</a></li>
-              </ul>
+            <h3 class="QL">Quick Links</h3>
+            <ul class="list-unstyled">
+              <li><a href="/mysticodisha/Feedback" class="QL">Feedback</a></li>
+              <li><a href="/mysticodisha/Faq" class="QL">FAQs</a></li>
+              <li><a href="/mysticodisha/ContactUs" class="QL">Contact Us</a></li>
+              <li><a href="/mysticodisha/AboutUs" class="QL">About Us</a></li>
+            </ul>
           </div>
           <div class="col-md-6 text-center">
-              <h2 class="mys">MYSTIC ODISHA</h2>
-              <img src="./svgs/footer-odisha.svg" alt="Mystic Odisha" class="img-fluid-odisha">
+            <h2 class="mys">MYSTIC ODISHA</h2>
+            <img src="/svgs/Home/Footer/footer-odisha.svg" alt="Mystic Odisha" class="img-fluid-odisha">
           </div>
-      </div>
-      <div class="text-center py-3 border-top">
+        </div>
+        <div class="text-center py-3 border-top">
           <p>© 2024 Company, Inc. All rights reserved.</p>
+        </div>
       </div>
+    </footer>
   </div>
-</footer>   
 
 
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="/js/home.js"></script>
+  <script src="/js/searchReco.js"></script>
+</body>
 
-
-</div>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="/js/home.js"></script>
-  </body>
 </html>
-
-
-

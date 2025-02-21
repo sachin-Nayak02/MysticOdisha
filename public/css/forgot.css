@@ -1,0 +1,206 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.forgot-container {
+    display: flex;
+    width: 85%;
+    max-width: 1000px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    overflow: hidden;
+}
+
+.graphic-section {
+    flex: 1;
+    background: linear-gradient(135deg, #6e8efbcc, #a777e3cc);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+
+
+.graphic-section h2 {
+    margin: 30px 0 15px;
+    font-weight: 600;
+}
+
+.graphic-section p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.illustration {
+    width: 280px;
+    height: auto;
+}
+
+.forgot-card {
+    flex: 1;
+    padding: 50px 40px;
+    background: white;
+}
+
+.pass {
+    margin-bottom: 40px;
+}
+
+.pass h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.instruction-text {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6e8efb;
+    font-size: 1.1rem;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #95a5a6;
+}
+
+.control {
+    width: 80%;
+    padding: 12px 20px 12px 45px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.control:focus {
+    border-color: #6e8efb;
+    box-shadow: 0 0 8px rgba(110, 142, 251, 0.2);
+    outline: none;
+}
+
+.res {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    color: white;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.res:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.auth-links {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.back-link {
+    color: #6e8efb;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #4b6cd3;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .forgot-container {
+        flex-direction: column;
+        width: 90%;
+        margin: 20px 0;
+    }
+
+    .graphic-section {
+        padding: 30px 20px;
+        display: none; /* Hide graphic section on mobile */
+    }
+
+    .forgot-card {
+        padding: 40px 25px;
+    }
+
+    .illustration {
+        width: 200px;
+    }
+}
+
+.otp-btn{
+    border:2px solid white ;
+    background-color: #6e8efbcc !important;
+    height: 3rem;
+    width: 10rem;
+    position: relative;
+    top: 2rem;
+    left: 22%;
+    border-radius: 20px;
+}
+.otp-btn:hover{
+    background-color: #2a5bfdde !important;
+}
+#icon-msg{
+    position: relative;
+    /* bottom: 1rem; */
+    top: 3rem;
+}
+
+
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    color: #854f1d;
+    border-radius: 50%;
+    display: grid;
+    background: 
+      conic-gradient(from 90deg at 4px 4px,#0000 90deg,currentColor 0)
+      -4px -4px/calc(50% + 2px) calc(50% + 2px),
+      radial-gradient(farthest-side,currentColor 6px,#0000 7px calc(100% - 6px),currentColor calc(100% - 5px)) no-repeat;
+    animation: l10 2s infinite linear;
+    position: relative;
+  }
+  .loader:before {
+    content: "";
+    border-radius: inherit;
+    background: inherit;
+    transform: rotate(45deg);
+  }
+  @keyframes l10 {to{transform: rotate(.5turn)}}
