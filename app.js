@@ -197,13 +197,14 @@ app.get("/mysticodisha/like/:id",restrictToLoggedinUserOnly ,async(req,res,next)
 })
 
 
-  app.get("/",async(req,res,next)=>{
+  app.get("https://sachin-nayak02.github.io/MysticOdisha/",async(req,res,next)=>{
 
     let dists=["Bargarh", "Balangir", "Sonepur", "Jharsuguda", "Sambalpur", "Deogarh", "Nuapada", "Kalahandi", "Mayurbhanj", "Keonjhar", "Sundargarh", "Dhenkanal", "Angul", "Boudh","Balasore","Bhadrak", "Jagatsinghpur","Jajpur","Kendrapara","Khordha","Puri","Cuttack","Nayagarh","Ganjam","Gajapati","Kandhamal","Rayagada","Koraput","Nabarangpur","Malkangiri"];
     let index=Math.floor(Math.random()*30)+1
     let places=await Place.find({dist:dists[index]});
     
     res.render("./clientSide/home.ejs",{places})
+
     // console.log(index2)
   })
 
