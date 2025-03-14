@@ -60,7 +60,7 @@
                   Odisha</a></li>
             </div>
             <div class="list-item">
-              <li><img class="contact" src="./svgs/contactUs.svg" alt=""><a href="/mysticodisha/ContactUs">Contact Us</a>
+              <li><img class="contact" src="./svgs/food.svg" alt=""><a href="/mysticodisha/food">Famous Food</a>
               </li>
             </div>
             <!-- <li</div>><img class="home" src="logout.svg" alt="" ><a href="/contact">Contact Us</a></li> -->
@@ -69,7 +69,7 @@
         </ul>
 
         <div class="nav-foot">
-          <div class="dark-light btn">
+          <div class="dark-light btn" id="darkbtn">
             <i id="icon-mood" class="fas fa-moon "></i>
             <h5>Dark Mode</h5>
           </div>
@@ -92,11 +92,13 @@
         </form>       -->
 
 
-      <form action="/submit" method="post" class="d-flex" role="search">
-        <input class="form-control me-2" type="search" name="placeName" placeholder="Enter Place Name"
-          aria-label="Search" id="searchBox" autocomplete="off" />
-          <button type="button" class="sea" style="background:none;"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i></button>
-        <ul id="suggestions"></ul>
+        <form id="searchForm" action="/mysticOdisha/:place" method="post" class="d-flex" role="search">
+          <input class="form-control me-2" type="search" name="placeName" placeholder="Enter Place Name"
+              aria-label="Search" id="searchBox" autocomplete="off" />
+          <button type="submit" class="sea" style="background:none;">
+              <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i>
+          </button>
+          <ul id="suggestions"></ul>
       </form>
 
       <!-- User Icon -->
@@ -112,7 +114,8 @@
   <div class="main-body dark-bg">
     <div class="video-box">
       <video loop="true" id="video-id" autoplay="true" muted>
-        <source src="/video/mysticOdishaVideo.mp4" type="video/mp4">
+        <!-- <source src="/video/mysticOdishaVideo.mp4" type="video/mp4"> -->
+        <source src="/video/demo video.mp4" type="video/mp4">
 
         Your browser does not support the video tag.
       </video>
@@ -209,8 +212,8 @@
           <div class="col-md-3">
             <h2 id="followUs">Follow us</h2>
             <ul class="list-unstyled d-flex">
-              <li><a href="#"><img src="/svgs/Home/Footer/footer-facebook.svg" alt="Facebook"></a></li>
-              <li><a href="#"><img id="X" src="/svgs/Home/Footer/footer-x.svg" alt="Twitter"></a></li>
+              <li><a href="https://www.facebook.com/people/Sukinomi-Odisha/61573484476707/"><img src="/svgs/Home/Footer/footer-facebook.svg" alt="Facebook"></a></li>
+              <li><a href="https://x.com/MysticOdisha"><img id="X" src="/svgs/Home/Footer/footer-x.svg" alt="Twitter"></a></li>
               <li><a href="https://www.instagram.com/odishamystic?igsh=YnRyZWJveXZ5dWwx"><img src="/svgs/Home/Footer/footer-instagram.svg" alt="Instagram"></a></li>
               <li><a href="#"><img src="/svgs/Home/Footer/footer-youtube.svg" alt="YouTube"></a></li>
               <li><a href="mailto:odishamystic@gmail.com?subject=Website%20Enquiry" aria-label="Contact via Gmail"class="email-link"><img src="/svgs/Home/Footer/footer-gmail.svg" alt="Email us via Gmail" width="32" height="32" loading="lazy"></a></li>

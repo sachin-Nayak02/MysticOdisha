@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap Navbar</title>
+    <title>Explore Odisha:Where Heritage Meets Serenity</title>
     <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="../css/destination.css">
     <link rel="stylesheet" href="../css/searchReco.css">
@@ -40,15 +40,15 @@
         <div class="list-item"><li><img class="attraction" src="../svgs/attarction.svg" alt="" ><a href="/mysticodisha/attraction">Attraction</a></li></div>
         <div class="list-item"><li><img class="festival" src="../svgs/festival.svg" alt="" ><a href="/mysticodisha/festival">Festival</a></li></div>
         <div class="list-item"><li><img class="about" src="../svgs/aboutOdisha.svg" alt="" ><a href="/mysticodisha/aboutodisha">About Odisha</a></li></div>
-        <div class="list-item"><li><img class="contact" src="../svgs/contactUs.svg" alt="" ><a href="/mysticodisha/contact">Contact Us</a></li></div>
+        <div class="list-item"><li><img class="contact" src="../svgs/food.svg" alt="" ><a href="/mysticodisha/food">Famous Food</a></li></div>
         <!-- <li</div>><img class="home" src="logout.svg" alt="" ><a href="/contact">Contact Us</a></li> -->
       </div>
       <br><br>
     </ul>  
     <div class="nav-foot">
   
-    <div class="dark-light btn">
-      <i id="icon-mood" class="fas fa-moon "></i>
+    <div class="dark-light btn" id="darkbtn">
+      <i id="icon" class="fas fa-moon "></i>
       <h5 >Dark Mode</h5>
     </div>
     <a href="/logout"> <div class="logout btn">
@@ -64,11 +64,14 @@
                <a class="navbar-brand" href="/" style="cursor: pointer;">MYSTIC&nbsp;<div id="loader" class="loader" ></div>DISHA</a>
            </div>
           <!-- Search Bar -->
-          <form action="/submit" method="post" class="d-flex" role="search">
-            <input class="form-control me-2" type="search" name="placeName" placeholder="Enter Place Name" aria-label="Search"  id="searchBox"  autocomplete="off" />
-            <button type="button" class="sea" style="background:none;"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i></button>
+          <form id="searchForm" action="/mysticOdisha/:place" method="post" class="d-flex" role="search">
+            <input class="form-control me-2" type="search" name="placeName" placeholder="Enter Place Name"
+                aria-label="Search" id="searchBox" autocomplete="off" />
+            <button type="submit" class="sea" style="background:none;">
+                <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i>
+            </button>
             <ul id="suggestions"></ul>
-          </form>     
+        </form>   
           <!-- User Icon -->
           <div class="Userico">
             <a href="/mysticodisha/user">
@@ -87,15 +90,15 @@
           <div class="card-content">
             <h2 class="card-title">East Odisha</h2>
             <ul class="card-text">
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Balasore">Balasore</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Bhadrak">Bhadrak</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Jagatsinghpur">Jagatsinghpur</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Jajpur">Jajpur</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Kendrapara">Kendrapara</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Khordha">Khordha</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Puri">Puri</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Cuttack">Cuttack</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Nayagarh">Nayagarh</a></li>
+              <li><a class="dark" href="/mysticodisha/destination/Balasore">Balasore</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Bhadrak">Bhadrak</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Jagatsinghpur">Jagatsinghpur</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Jajpur">Jajpur</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Kendrapara">Kendrapara</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Khordha">Khordha</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Puri">Puri</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Cuttack">Cuttack</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Nayagarh">Nayagarh</a></li>
             </ul>
           </div>
         </div>
@@ -105,14 +108,14 @@
           <div class="card-content">
             <h2 class="card-title">West Odisha</h2>
             <ul class="card-text">
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Bargarh"> Bargarh</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Balangir"> Balangir</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Sonepur"> Subarnapur (Sonepur)</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Jharsuguda"> Jharsuguda</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Sambalpur"> Sambalpur</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Deogarh"> Deogarh</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Nuapada"> Nuapada</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Kalahandi"> Kalahandi</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Bargarh"> Bargarh</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Balangir"> Balangir</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Sonepur"> Subarnapur (Sonepur)</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Jharsuguda"> Jharsuguda</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Sambalpur"> Sambalpur</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Deogarh"> Deogarh</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Nuapada"> Nuapada</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Kalahandi"> Kalahandi</a></li>
             </ul>
           </div>
         </div>
@@ -122,9 +125,9 @@
           <div class="card-content">
             <h2 class="card-title">North Odisha</h2>
             <ul class="card-text">
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Mayurbhanj"> Mayurbhanj</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Keonjhar"> Keonjhar</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Sundargarh"> Sundargarh</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Mayurbhanj"> Mayurbhanj</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Keonjhar"> Keonjhar</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Sundargarh"> Sundargarh</a></li>
             </ul>
           </div>
         </div>
@@ -134,13 +137,13 @@
           <div class="card-content">
             <h2 class="card-title">South Odisha</h2>
             <ul class="card-text">
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Ganjam"> Ganjam</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Gajapati"> Gajapati</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Kandhamal"> Kandhamal</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Rayagada"> Rayagada</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Koraput"> Koraput</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Nabarangpur"> Nabarangpur</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Malkangiri"> Malkangiri</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Ganjam"> Ganjam</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Gajapati"> Gajapati</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Kandhamal"> Kandhamal</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Rayagada"> Rayagada</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Koraput"> Koraput</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Nabarangpur"> Nabarangpur</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Malkangiri"> Malkangiri</a></li>
             </ul>
           </div>
         </div>
@@ -150,9 +153,9 @@
           <div class="card-content">
             <h2 class="card-title">Central Odisha</h2>
             <ul class="card-text">
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Dhenkanal"> Dhenkanal</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Angul"> Angul</a></li>
-              <li><a class="dark-mood-text" href="/mysticodisha/destination/Boudh"> Boudh</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Dhenkanal"> Dhenkanal</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Angul"> Angul</a></li>
+              <li><a class="dark-text" href="/mysticodisha/destination/Boudh"> Boudh</a></li>
             </ul>
           </div>
         </div>
@@ -167,8 +170,8 @@
                 <div class="col-md-3">
                     <h2 id="followUs" >Follow us</h2>
                     <ul class="list-unstyled d-flex">
-                        <li><a href="#"><img src="../svgs/Home/Footer/footer-facebook.svg" alt="Facebook" ></a></li>
-                        <li><a href="#"><img id="X" src="../svgs/Home/Footer/footer-x.svg" alt="Twitter" ></a></li>
+                        <li><a href="https://www.facebook.com/people/Sukinomi-Odisha/61573484476707/"><img src="../svgs/Home/Footer/footer-facebook.svg" alt="Facebook" ></a></li>
+                        <li><a href="https://x.com/MysticOdisha"><img id="X" src="../svgs/Home/Footer/footer-x.svg" alt="Twitter" ></a></li>
                         <li><a href="https://www.instagram.com/odishamystic?igsh=YnRyZWJveXZ5dWwx"><img src="../svgs/Home/Footer/footer-instagram.svg" alt="Instagram" ></a></li>
                         <li><a href="#"><img src="../svgs/Home/Footer/footer-youtube.svg" alt="YouTube" ></a></li>
                         <li><a href="mailto:odishamystic@gmail.com?subject=Website%20Enquiry" aria-label="Contact via Gmail"class="email-link"><img src="/svgs/Home/Footer/footer-gmail.svg" alt="Email us via Gmail" width="32" height="32" loading="lazy"></a></li>

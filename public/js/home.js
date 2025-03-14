@@ -10,42 +10,97 @@ function closeNav() {
 }
 
 // ===================================================dark mode======================================
+// document.addEventListener("DOMContentLoaded", () => {
+  // let darkbtn = document.querySelector(".dark-light");
+
+//   darkbtn.addEventListener("click", () => {
+//     let body = document.body;
+//     body.classList.toggle("dark-mood");
+
+//     let h5 = document.querySelector(".dark-light h5");
+//     const originalText = "Dark Mode";
+//     const newText = "Light Mode";
+//     h5.innerText = h5.innerText === originalText ? newText : originalText;
+
+//     let dbText = document.querySelectorAll(".dark-mood-text");
+//     let sectionSlide = document.querySelectorAll(".dark-bg");
+//     let icon = document.querySelector("#icon-mood");
+//     if (icon.classList.contains("fa-moon")) {
+//       icon.classList.remove("fa-moon");
+//       icon.classList.add("fa-sun");
+//       for (let i = 0; i < dbText.length; i++) {
+//         dbText[i].style.color = "white";
+//       }
+//       for (let i = 0; i < sectionSlide.length; i++) {
+//         sectionSlide[i].style.backgroundColor = "black";
+//       }
+//     } else {
+//       icon.classList.remove("fa-sun");
+//       icon.classList.add("fa-moon");
+//       for (let i = 0; i < dbText.length; i++) {
+//         dbText[i].style.color = "black";
+//       }
+//       for (let i = 0; i < sectionSlide.length; i++) {
+//         sectionSlide[i].style.backgroundColor = "white";
+//       }
+//     }
+//   });
 document.addEventListener("DOMContentLoaded", () => {
-  let darkbtn = document.querySelector(".dark-light");
+  let darkbtn = document.querySelector("#darkbtn");
+  let body = document.body;
+  let h5 = document.querySelector(".dark-light h5");
+  let icon = document.querySelector("#icon-mood");
+  let dbText = document.querySelectorAll(".dark-mood-text");
+  let sectionSlide = document.querySelectorAll(".dark-bg");
 
+  // 🔹 Function to enable Dark Mode
+  function enableDarkMode() {
+    body.classList.add("dark-mood");
+    h5.innerText = "Light Mode";
+    icon.classList.remove("fa-moon");
+    icon.classList.add("fa-sun");
+
+    dbText.forEach((el) => (el.style.color = "white"));
+    sectionSlide.forEach((el) => (el.style.backgroundColor = "black"));
+
+    // Save dark mode state in localStorage
+    localStorage.setItem("darkMode", "enabled");
+  }
+
+  // 🔹 Function to disable Dark Mode
+  function disableDarkMode() {
+    body.classList.remove("dark-mood");
+    h5.innerText = "Dark Mode";
+    icon.classList.remove("fa-sun");
+    icon.classList.add("fa-moon");
+
+    dbText.forEach((el) => (el.style.color = "black"));
+    sectionSlide.forEach((el) => (el.style.backgroundColor = "white"));
+
+    // Save light mode state in localStorage
+    localStorage.setItem("darkMode", "disabled");
+  }
+
+  // 🔹 Check localStorage on page load and apply mode
+  if (localStorage.getItem("darkMode") === "enabled") {
+    enableDarkMode();
+  } else {
+    disableDarkMode();
+  }
+
+  // 🔹 Toggle Dark Mode on button click
   darkbtn.addEventListener("click", () => {
-    let body = document.body;
-    body.classList.toggle("dark-mood");
-
-    let h5 = document.querySelector(".dark-light h5");
-    const originalText = "Dark Mode";
-    const newText = "Light Mode";
-    h5.innerText = h5.innerText === originalText ? newText : originalText;
-
-    let dbText = document.querySelectorAll(".dark-mood-text");
-    let sectionSlide = document.querySelectorAll(".dark-bg");
-    let icon = document.querySelector("#icon-mood");
-    if (icon.classList.contains("fa-moon")) {
-      icon.classList.remove("fa-moon");
-      icon.classList.add("fa-sun");
-      for (let i = 0; i < dbText.length; i++) {
-        dbText[i].style.color = "white";
-      }
-      for (let i = 0; i < sectionSlide.length; i++) {
-        sectionSlide[i].style.backgroundColor = "black";
-      }
+    if (body.classList.contains("dark-mood")) {
+      disableDarkMode(); // Switch to Light Mode
     } else {
-      icon.classList.remove("fa-sun");
-      icon.classList.add("fa-moon");
-      for (let i = 0; i < dbText.length; i++) {
-        dbText[i].style.color = "black";
-      }
-      for (let i = 0; i < sectionSlide.length; i++) {
-        sectionSlide[i].style.backgroundColor = "white";
-      }
+      enableDarkMode(); // Switch to Dark Mode
     }
   });
 });
+
+
+
+// });
 
 // --------------------------video==================-------------------------------------
 document.addEventListener("DOMContentLoaded", () => {

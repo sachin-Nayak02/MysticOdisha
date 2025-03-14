@@ -1,0 +1,205 @@
+<% layout("/layout/boilerplate") -%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odisha Famous Food & Cuisines</title>
+    <link rel="stylesheet" href="/css/food.css">
+</head>
+<body>
+    <div class="con">
+        <h1>Odisha Famous Food & Cuisines</h1>
+        <div class="food-grid">
+            <!-- Card 1: Pakhala Bhata -->
+            <div class="food-card" onclick="showSlider('pakhala')">
+                <div class="card-image">
+                    <img src="https://www.culturebook.in/wp-content/uploads/2024/10/Pakhala-Bhata.jpg"
+                        alt="Pakhala Bhata">
+                </div>
+                <h3>Pakhala Bhata</h3>
+            </div>
+
+            <!-- Card 2: Chhena Poda -->
+            <div class="food-card" onclick="showSlider('chhena')">
+                <div class="card-image">
+                    <img src="https://anotherglobaleater.wordpress.com/wp-content/uploads/2023/04/chhenapoda.jpg?w=1200"
+                        alt="Chhena Poda">
+                </div>
+                <h3>Chhena Poda</h3>
+            </div>
+
+            <!-- Card 3: Dalma -->
+            <div class="food-card" onclick="showSlider('dalma')">
+                <div class="card-image">
+                    <img src="https://img.freepik.com/premium-photo/traditional-odisha-dalma-lentil-vegetable-stew_167857-54465.jpg"
+                        alt="Dalma">
+                </div>
+                <h3>Dalma</h3>
+            </div>
+
+            <!-- Card 4: Macha Ghanta -->
+            <div class="food-card" onclick="showSlider('macha')">
+                <div class="card-image">
+                    <img src="https://www.triphippies.com/wp-content/uploads/2023/06/Macha-ghanta.webp"
+                        alt="Macha Ghanta">
+                </div>
+                <h3>Macha Ghanta</h3>
+            </div>
+
+            <!-- Card 5: Rasabali -->
+            <div class="food-card" onclick="showSlider('rasabali')">
+                <div class="card-image">
+                    <img src="https://static.toiimg.com/thumb/imgsize-23456,msid-78277406,width-600,resizemode-4/78277406.jpg"
+                        alt="Rasabali">
+                </div>
+                <h3>Rasabali</h3>
+            </div>
+
+            <!-- Card 6: Kanika -->
+            <div class="food-card" onclick="showSlider('kanika')">
+                <div class="card-image">
+                    <img src="https://www.freeindianrecipes.com/wp-content/uploads/Kanika.jpg" alt="Kanika">
+                </div>
+                <h3>Kanika</h3>
+            </div>
+
+            <!-- Card 7: Chungdi Malai -->
+            <div class="food-card" onclick="showSlider('chungdi')">
+                <div class="card-image">
+                    <img src="https://assets.bonappetit.com/photos/5f8f021c61c21dbbfbb529eb/16:9/w_2288,h_1287,c_limit/_Shrimp-Curry-Lede.jpg"
+                        alt="Chungdi Malai">
+                </div>
+                <h3>Chungdi Malai</h3>
+            </div>
+
+            <!-- Card 8: Pitha -->
+            <div class="food-card" onclick="showSlider('pitha')">
+                <div class="card-image">
+                    <img src="https://cookishcreation.com/wp-content/uploads/2022/01/Pitha-A-Bengali-Delicay-2.jpg"
+                        alt="Pitha">
+                </div>
+                <h3>Pitha</h3>
+            </div>
+
+            <!-- Card 9: Santula -->
+            <div class="food-card" onclick="showSlider('santula')">
+                <div class="card-image">
+                    <img src="https://realfood.tesco.com/media/images/1400x919-OrissanSantula-f1f835f4-bfc1-4897-8c9a-770f2a30db53-0-1400x919.jpg"
+                        alt="Santula">
+                </div>
+                <h3>Santula</h3>
+            </div>
+
+            <!-- Card 10: Bela Pana -->
+            <div class="food-card" onclick="showSlider('bela')">
+                <div class="card-image">
+                    <img src="https://img-global.cpcdn.com/recipes/a40ba896f735852f/680x482cq70/bela-pana-recipe-recipe-main-photo.jpg"
+                        alt="Bela Pana">
+                </div>
+                <h3>Bela Pana</h3>
+            </div>
+
+            <!-- Card 11: Khicede -->
+            <div class="food-card" onclick="showSlider('khicede')">
+                <div class="card-image">
+                    <img src="https://www.holidify.com/blog/wp-content/uploads/2016/09/Khicede.jpg" alt="Khicede">
+                </div>
+                <h3>Khicede</h3>
+            </div>
+
+            <!-- Card 12: Chhencheda -->
+            <div class="food-card" onclick="showSlider('machabesar')">
+                <div class="card-image">
+                    <img src="https://images.squarespace-cdn.com/content/v1/578753d7d482e9c3a909de40/1686566852840-YDF0IBYLOPN6IUNSG1RN/Maacha+besara.jpg?format=2500w"
+                        alt="Maacha Besar">
+                </div>
+                <h3>Macha Besar</h3>
+            </div>
+
+            <!-- Card 13: Dahi Bara  -->
+            <div class="food-card" onclick="showSlider('dahi')">
+                <div class="card-image">
+                    <img src="https://rasagola.com/cdn/shop/files/dahibara_2048x.jpg?v=1706696607" alt="Dahi Bara">
+                </div>
+                <h3>Dahi Bara</h3>
+            </div>
+
+            <!-- Card 14: Ouu Khatta -->
+            <div class="food-card" onclick="showSlider('ouu')">
+                <div class="card-image">
+                    <img src="https://i.ytimg.com/vi/nXV5JFAq-kQ/maxresdefault.jpg" alt="Ouu Khatta">
+                </div>
+                <h3>Ouu Khatta</h3>
+            </div>
+
+
+            <!-- Card 15: Makarchula Pana -->
+            <div class="food-card" onclick="showSlider('makarchula')">
+                <div class="card-image">
+                    <img src="https://www.firsttimercook.com/wp-content/uploads/2017/01/Makara2Bchaula2B3.jpg"
+                        alt="Makarchula Pana">
+                </div>
+                <h3>Makarchula Pana</h3>
+            </div>
+
+            <!-- Card 16: Badi Chura -->
+            <div class="food-card" onclick="showSlider('badichura')">
+                <div class="card-image">
+                    <img src="https://www.archanaskitchen.com/images/archanaskitchen/1-Author/Sasmita/oriya-badi-chura-recipe-sundried-lentil-dumpling-crumble.jpg"
+                        alt="Badi Chura">
+                </div>
+                <h3>Badi Chura</h3>
+            </div>
+            <!-- Card 17: Chhena Jhili -->
+            <div class="food-card" onclick="showSlider('chenajhili')">
+                <div class="card-image">
+                    <img src="https://dianasahu.wordpress.com/wp-content/uploads/2015/07/b2df5-img_6097.jpg"
+                        alt="Chhena Jhili">
+                </div>
+                <h3>Chhena Jhili</h3>
+            </div>
+
+            <!-- Card 18: Kheeri -->
+            <div class="food-card" onclick="showSlider('kheeri')">
+                <div class="card-image">
+                    <img src="https://i.ytimg.com/vi/sdsFcQ_GHR4/maxresdefault.jpg" alt="Kheeri">
+                </div>
+                <h3>Kheeri</h3>
+            </div>
+
+            <!-- Card 19: Panipuri -->
+            <div class="food-card" onclick="showSlider('panipuri')">
+                <div class="card-image">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Pani_Puri1.JPG/800px-Pani_Puri1.JPG"
+                        alt="Panipuri">
+                </div>
+                <h3>Panipuri</h3>
+            </div>
+
+            <!-- Card 20: Khaja -->
+            <div class="food-card" onclick="showSlider('khaja')">
+                <div class="card-image">
+                    <img src="https://i.ytimg.com/vi/bo_x5vxuGuE/maxresdefault.jpg" alt="Khaja">
+                </div>
+                <h3>Khaja</h3>
+            </div>
+        </div>
+        <div class="slider" id="slider">
+            <div class="slider-content">
+                <span class="close-btn" onclick="hideSlider()">×</span>
+                <h2 id="food-title">Select a Dish</h2>
+                <div class="slider-image">
+                    <img id="slider-img" src="" alt="Dish Image">
+                </div>
+                <p id="food-description">Click on a card to see details about the dish.</p>
+                <p><strong>Where it is Famous:</strong> <span id="famous-place">N/A</span></p>
+                <p><strong>Why it is Famous:</strong> <span id="famous-reason">N/A</span></p>
+            </div>
+        </div>
+    </div>
+
+   <script src="/js/food.js"></script>
+</body>
+
+</html>

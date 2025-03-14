@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Not Found</title>
+    <link rel="stylesheet" href="/css/placenotfound.css">
+</head>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+.not-found-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.not-found-content {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+.not-found-title {
+    font-size: 120px;
+    margin: 0;
+    color: #ff4444;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    animation: pulse 2s infinite;
+}
+
+.not-found-subtitle {
+    font-size: 32px;
+    color: #333;
+    margin: 20px 0;
+}
+
+.not-found-text {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.not-found-text strong {
+    color: #2c3e50;
+}
+
+/* Compass Animation */
+.not-found-animation {
+    margin: 30px 0;
+}
+
+.compass {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border: 4px solid #2c3e50;
+    border-radius: 50%;
+    position: relative;
+    background: radial-gradient(circle, #fff 0%, #f0f0f0 100%);
+}
+
+.compass-needle {
+    width: 4px;
+    height: 40px;
+    background: #ff4444;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: bottom center;
+    transform: translate(-50%, -100%);
+    animation: spin 3s infinite linear;
+}
+
+.not-found-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.not-found-button:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -100%) rotate(0deg); }
+    100% { transform: translate(-50%, -100%) rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .not-found-title {
+        font-size: 80px;
+    }
+    
+    .not-found-subtitle {
+        font-size: 24px;
+    }
+    
+    .not-found-text {
+        font-size: 16px;
+    }
+    
+    .not-found-content {
+        padding: 20px;
+    }
+}
+</style>
+<body>
+    <div class="not-found-container">
+        <div class="not-found-content">
+            <h1 class="not-found-title">404</h1>
+            <h2 class="not-found-subtitle">Oops! Place Not Found</h2>
+            <p class="not-found-text">
+                We couldn't find "<strong><%= placeName %></strong>". 
+                It might be hiding somewhere off the map!
+            </p>
+            <div class="not-found-animation">
+                <div class="compass">
+                    <div class="compass-needle"></div>
+                </div>
+            </div>
+            <a href="/" class="not-found-button">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+

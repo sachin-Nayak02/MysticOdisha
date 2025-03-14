@@ -28,51 +28,83 @@
 // });
 
 // Star rating functionality
-const stars = document.querySelectorAll('.rating-star');
-const ratingValue = document.getElementById('ratingValue');
+document.addEventListener("DOMContentLoaded", function () {
+    const stars = document.querySelectorAll(".rating-star");
+    const ratingValue = document.getElementById("ratingValue");
+    const feedbackForm = document.getElementById("feedbackForm");
+    const comments = document.getElementById("comments");
+    const thankYouMessage = document.getElementById("thankYouMessage");
+    const rateExperienceHeading = document.querySelector(".text-center.mb-4");
+    const submitButton = feedbackForm.querySelector("button[type='submit']"); // Select the submit button
 
-stars.forEach(star => {
-    star.addEventListener('click', () => {
-        const value = parseInt(star.getAttribute('data-value'));
-        ratingValue.value = value;
-        
-        stars.forEach((s, index) => {
-            s.classList.toggle('active', index < value);
+    // Create an error message div inside the feedback container
+    const errorMessage = document.createElement("div");
+    errorMessage.classList.add("text-danger", "text-center", "mt-3");
+    feedbackForm.appendChild(errorMessage);
+
+    // Initially disable the submit button since no rating is selected
+    submitButton.disabled = true;
+
+    stars.forEach(star => {
+        star.addEventListener("click", () => {
+            const value = parseInt(star.getAttribute("data-value"));
+            ratingValue.value = value;
+
+            stars.forEach((s, index) => {
+                s.classList.toggle("active", index < value);
+            });
+
+            // Enable the submit button when a rating is selected
+            submitButton.disabled = false;
         });
     });
-});
 
-// Form submission handling
-document.getElementById('feedbackForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+    feedbackForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
 
-    // Simple validation
-    if (!this.checkValidity()) {
-        return;
-    }
+        const rating = parseInt(ratingValue.value) || 0; // Default to 0 if no value
+        const feedbackText = comments.value.trim();
 
-    // Get form values
-    const formData = {
-        rating: ratingValue.value,
-        comments: document.getElementById('comments').value
-    };
-    
-    let total=0;
-    let pepel=0;
-    total+=formData.rating;
-    ++pepel;
-    let rating=total/pepel;
-    console.log(rating);
+        // Hide messages initially
+        errorMessage.style.display = "none";
+        thankYouMessage.style.display = "none";
 
+        if (rating === 0) {
+            errorMessage.textContent = "❌ Rating cannot be 0 stars. Please provide a valid rating.";
+            errorMessage.style.display = "block";
+            submitButton.disabled = true; // Disable button again if rating is reset or invalid
+            return;
+        }
 
-    // Here you would typically send the data to a server
-    console.log('Form submitted:', formData);
+        if (rating <= 3 && feedbackText === "") {
+            errorMessage.textContent = "⚠️ Feedback comments are required for ratings of 3 stars or below.";
+            errorMessage.style.display = "block";
+            return;
+        }
 
-    // Show thank you message and reset form
-    this.reset();
-    stars.forEach(star => star.classList.remove('active'));
-    ratingValue.value = '';
-    
-    document.getElementById('feedbackForm').style.display = 'none';
-    document.getElementById('thankYouMessage').style.display = 'block';
+        const formData = { rating, comments: feedbackText };
+
+        try {
+            const response = await fetch("/submit-feedback", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                feedbackForm.style.display = "none";
+                rateExperienceHeading.style.display = "none";
+                thankYouMessage.style.display = "block";
+            } else {
+                errorMessage.textContent = data.error;
+                errorMessage.style.display = "block";
+            }
+        } catch (error) {
+            console.error("Error submitting feedback:", error);
+            errorMessage.textContent = "Something went wrong. Please try again.";
+            errorMessage.style.display = "block";
+        }
+    });
 });

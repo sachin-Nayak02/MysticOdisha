@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Odisha Tourism</title>
+    <title> Experience <%=distPlaces.name%> | Mystic Odisha's Hidden Treasure </title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/css/placepage.css">
@@ -13,7 +13,7 @@
 <body>
     <div class="contai">
         <div class="hero-section scroll-reveal">
-            <img src="<%= distPlaces.image %>" alt="<%= distPlaces.name %>" class="hero-image">
+            <img src="<%= distPlaces.imagebn %>" alt="<%= distPlaces.name %>" class="hero-image">
             <div class="hero-content">
                 <h1 class="pname"><%= distPlaces.name %></h1>
                 <h2 class="dname"><%= distPlaces.description %></h2>
@@ -77,6 +77,7 @@
                     </div>
                     <p class="bio"><%- distPlaces.nearbyattraction %></p>
                 </div>
+                <br><br><br>
             </div>
 
             <div class="map-container">
@@ -92,7 +93,7 @@
                     <form action="/mysticodisha/like/<%=distPlaces._id %>" method="get">
                     <button class="icon-btn" id="likeBtn" >
                         <i class="fas fa-heart"></i>
-                        <span>Like</span>
+                        <span>Add to Wishlist</span>
                     </button>
                 </form>
                     <button class="icon-btn" id="shareBtn">

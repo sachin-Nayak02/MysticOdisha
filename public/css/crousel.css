@@ -64,6 +64,7 @@
   width: 53rem;
   height: 42rem;
   position: relative;
+  transition: 0.5s;
 }
 
 .place-slide-img{
@@ -99,6 +100,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.5s;
   
 }
 
@@ -152,6 +154,7 @@
   position: absolute;
   top: -2.5rem;
   left: 30rem;
+  left: 40rem;
 }
 
 .slider-controls .rigarrow{
@@ -159,4 +162,26 @@
   background: none;
   position: absolute;
   top: -2.5rem;
+  left: 50rem;
+}
+
+.cr-expl{
+  position: relative;
+  left: 4rem;
+  top: 22rem;
+  width: 6rem;
+  display: none;
+  /* background-color: #002639; */
+  /* transition: 0.5s; */
+}
+.place-slide:hover .cr-expl{
+  display: block;
+}
+
+
+.place-name{
+  position: relative;
+    bottom: 3rem;
+    left: 2rem;
+    font-family: math;
 }

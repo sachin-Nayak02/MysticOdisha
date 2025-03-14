@@ -1,20 +1,8 @@
 .conti {
-    background: linear-gradient(to right, #003751 20%,  #040B15 100%);
-    font-family: "Poppins", serif;
-    position: relative;
-    top: 6rem;
-}
-/* Feedback Section */
-.main-body-feedback{
+  background: linear-gradient(to right, #003751 20%, #040B15 100%);
+  font-family: "Poppins", serif;
   position: relative;
-  height: 80vh;
-}
-.feedback-container {
-  background: rgba(255, 255, 255, 0.097);
-  padding: 20px;
-  margin: 50px auto;
-  width: 50%;
-  border-radius: 10px;
+  top: 6rem;
 }
 
 /* Star Rating */
@@ -22,7 +10,7 @@
   font-size: 30px;
   cursor: pointer;
 }
-                
+
 .star {
   color: gray;
 }
@@ -31,15 +19,15 @@
   color: gold;
 }
 
-.wha{
+.wha {
   display: block;
   width: 100%;
   border-radius: 10px;
-  text-align: center; /* Horizontally centers placeholder and text */
-
+  text-align: center;
+  height: 10rem;
 }
 
-.wha::placeholder{
+.wha::placeholder {
   transform: translateY(100%);
 }
 
@@ -64,8 +52,8 @@
   margin: 50px auto;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  background-color: #d3d3d34d;;
+  background:linear-gradient(to right, #003751 20%, #040B15 100%)!important;
+  height: 30rem;
 }
 
 .rating {
@@ -90,6 +78,7 @@
 #thankYouMessage {
   display: none;
 }
+
 .feed {
   display: flex;
   justify-content: center;
@@ -97,22 +86,26 @@
 
 .ad {
   display: flex;
+  position: relative;
+  top: -32rem;
 }
 
-.fd,.sd {
+.fd,
+.sd {
   position: absolute;
-  height: 64vh;
-  top: 5rem;
+  height: 53vh;
+  top: 9.3rem;
 }
 
 .sd {
   position: absolute;
-  left: 67rem;
-  top: 7.2rem;
+  left: 65rem;
 }
 
 .fd {
   position: absolute;
-  left: 5rem;
-  top: 7.2rem;
+  left: 13rem;
+}
+.mt-4{
+  margin-top: 10.5rem !important;
 }

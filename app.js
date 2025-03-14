@@ -17,7 +17,7 @@ const cookieParser=require("cookie-parser")
 const {restrictToLoggedinUserOnly , checkAuth}=require("./middleware/auth.js")
 const forgotPasswordRoutes = require("./router/forgatePassword.js");
 const resetPassword = require("./router/resetpass");
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const cors = require("cors");
 const upload = require("./middleware/upload");
 const nodemailer=require("nodemailer");
@@ -182,7 +182,10 @@ res.redirect("/mysticodisha/user")
 //=========================================
 app.get("/mysticodisha/like/:id",restrictToLoggedinUserOnly ,async(req,res,next)=>{
     const {id}=req.params; //placeid
-    // let place=await Place.findById(id);
+//     let place=await Place.findById(id);
+//    let dist2=place.dist;
+//    let name2=place.name;
+//    console.log(dist2,name2)
 
    let user= getUser(sessionId);
    let userId=user._id; //userid
@@ -193,8 +196,9 @@ app.get("/mysticodisha/like/:id",restrictToLoggedinUserOnly ,async(req,res,next)
     { new: true } // Returns the updated document
 );
 
-    res.redirect("/mysticodisha/user")
-})
+res.redirect("/mysticodisha/user")
+
+});
 
 
   app.get("https://sachin-nayak02.github.io/MysticOdisha/",async(req,res,next)=>{
@@ -221,20 +225,7 @@ app.get("/mysticodisha/like/:id",restrictToLoggedinUserOnly ,async(req,res,next)
     }
 });
 
-app.post('/submit', async (req, res) => {
-    const placeName = req.body.placeName.trim();
-    try {
-        const distPlaces = await Place.findOne({ name: new RegExp(placeName, 'i') });
-        if (distPlaces) {
-            res.render('./clientSide/placePage.ejs', { distPlaces });
-        } else {
-            res.status(404).send('Place not found');
-        }
-    } catch (error) {
-        res.status(500).send('Server Error');
-    }
-
-});
+// 
 
 //user login
 app.get("/mysticodisha/Signup&SignIn",(req,res,next)=>{
@@ -295,6 +286,12 @@ app.get("/mysticodisha/forgot",(req,res,next)=>{
   app.get("/mysticodisha/attraction",(req,res,next)=>{
     res.render("./clientSide/attraction.ejs");
   })
+//===============================================food===================================
+
+app.get("/mysticodisha/food",(req,res,next)=>{
+    res.render("./clientSide/food.ejs");
+  })
+
 
   //================================= Frequenty Ask Question====================================================
   app.get("/mysticodisha/Faq",(req,res,next)=>{
@@ -310,15 +307,15 @@ app.get("/mysticodisha/forgot",(req,res,next)=>{
 const transporter = nodemailer.createTransport({
     service: 'gmail', // Use your email service (e.g., 'gmail', 'outlook')
     auth: {
-        user: 'odishamystic@gmail.com', // Replace with your email
-        pass: 'nxdj upyc obrt jexm'  // Replace with your email password or app password
+        user: process.env.EMAIL, // Replace with your email
+        pass: process.env.EMAIL_PASSWORD  // Replace with your email password or app password
     }
 });
 
   // Route to handle form submission
 app.post('/mysticodisha/send-email', (req, res) => {
     const { name, email, message } = req.body;
-
+ 
     // Define mailOptions inside the route handler
     const mailOptions = {
         from: 'odishamystic@gmail.com', // Sender address
@@ -338,21 +335,89 @@ app.post('/mysticodisha/send-email', (req, res) => {
         res.status(200).json({ success: true, message: 'Message sent successfully!' });
     });
 }); 
+
+
+//================================total place page route=======================================
+
+app.post('/mysticOdisha/:place', async (req, res) => {
+        const placeName = req.body.placeName.trim();
+        try {
+            const distPlaces = await Place.findOne({ name: new RegExp(placeName, 'i') });
+            if (distPlaces) {
+                res.render('./clientSide/placePage.ejs', { distPlaces });
+            } else {
+                res.render('./clientSide/placenotfound.ejs', { placeName });
+            }
+        } catch (error) {
+            res.status(500).send('Server Error');
+        }
+    });
+
+
+
+
+
   //=========================================== About Us ====================================================
   app.get("/mysticodisha/AboutUs",(req,res,next)=>{
     res.render("./clientSide/aboutus.ejs");
   })
   //=========================================== Feedback ====================================================
-  app.get("/mysticodisha/Feedback",(req,res,next)=>{
+  app.get("/mysticodisha/Feedback",restrictToLoggedinUserOnly,(req,res,next)=>{
     res.render("./clientSide/feedback.ejs");
   })
 
+  app.post("/submit-feedback", (req, res) => {
+    const { rating, comments } = req.body;
+    const ratingValue = parseInt(rating);
+
+    // Validation
+    if (ratingValue === 0) {
+        return res.status(400).json({ error: "Rating cannot be 0 stars. Please provide a valid rating." });
+    }
+
+    if (ratingValue <= 3 && (!comments || comments.trim() === "")) {
+        return res.status(400).json({ error: "Feedback comments are required for ratings of 3 stars or below." });
+    }
+
+    // Email content
+    const mailOptions = {
+        from: "odishamystic@gmail.com", // Sender address (your Gmail)
+        to: "odishamystic@gmail.com",   // Receiver address (could be the same or different)
+        subject: `New Feedback Received - ${ratingValue} Stars`,
+        text: `
+            Rating: ${ratingValue} Stars
+            Comments: ${comments || "No comments provided"}
+        `,html: `
+        <h3>New Feedback Received</h3>
+        <p><strong>Rating:</strong> ${ratingValue} Stars</p>
+        <p><strong>Comments:</strong> ${comments || "No comments provided"}</p>
+    `,
+};
+
+// Send email using Nodemailer
+transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+        console.error("Error sending email:", error);
+        return res.status(500).json({ error: "Failed to send feedback. Please try again later." });
+    } else {
+        console.log("Email sent:", info.response);
+        return res.status(200).json({ message: "Thank you for your feedback!" });
+    }
+});
+});
+ 
 //============================================logout========================================================
 app.get("/logout", (req, res) => {
     res.clearCookie("uid"); // Clear the authentication cookie
     res.redirect("/");
 });
 
+// ================================attrarction unique place=================================
+app.get("/mysticodisha/attraction/:unique",(req,res,next)=>{
+    const {unique}=req.params;
+    res.render(`./clientSide/${unique}.ejs`)
+
+})
 
 
 
@@ -600,7 +665,8 @@ app.delete("/dist/:id",wrapAsync(async(req,res,next)=>{
 
 //=================================middleware==========================
 app.get('*',(req,res,next)=>{
-    next( new ExpressError(401,"Sorry,Page Not Found"));
+    // next( new ExpressError(401,"Sorry,Page Not Found"));
+    res.render("./clientSide/pagenotfound.ejs")
 })
 app.use((err,req,res,next)=>{
       let {status=500,message="client side error"}=err;

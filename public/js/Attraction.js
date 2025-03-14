@@ -1,3 +1,5 @@
+
+// =============================Attarction.js==============================
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.querySelector('.carousel-track');
     const items = document.querySelectorAll('.cultural-item');
@@ -19,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateCarousel() {
         // Calculate slide position
-        document.addEventListener("DOMContentLoaded", () => {
         const slideWidth = items[0].clientWidth;
         track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 
@@ -31,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
             dot.classList.toggle('active', index === currentIndex);
         });
-    });
     }
 
     function goToSlide(index) {
@@ -50,17 +50,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Event listeners
-    document.addEventListener("DOMContentLoaded", () => {
     prevBtn.addEventListener('click', prevSlide);
     nextBtn.addEventListener('click', nextSlide);
-    });
 
     // Auto-play (optional)
     let autoPlay = setInterval(nextSlide, 5000);
 
     // Pause on hover
-    document.addEventListener("DOMContentLoaded", () => {
     track.addEventListener('mouseenter', () => clearInterval(autoPlay));
     track.addEventListener('mouseleave', () => autoPlay = setInterval(nextSlide, 5000));
-    });
 });

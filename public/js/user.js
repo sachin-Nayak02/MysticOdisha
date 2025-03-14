@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
+// });
 let userid=document.getElementById("user-id").value
-});
 document.addEventListener("DOMContentLoaded", () => {
 document.getElementById("profile-input").addEventListener("change", function(event) {
     const file = event.target.files[0];

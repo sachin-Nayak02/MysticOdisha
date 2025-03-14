@@ -112,3 +112,9 @@
 .team{
     display: inline-flex;
 }
+
+.text-center img{
+    height: 157px;
+    object-fit: contain;
+    /* filter: grayscale(1); */
+}

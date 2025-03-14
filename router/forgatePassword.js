@@ -23,7 +23,7 @@ router.post("/forgot-password", async (req, res) => {
         await user.save();
 
         // Send OTP via email
-        await sendMail(email, "Password Reset OTP", `Your OTP is: ${otp},OTP Expire in 5 minute.Thank you for Joining our Platform , We Are Greatful To you`);
+        await sendMail(email, "Password Reset OTP", `Your OTP is: ${otp} ,OTP Expire in 5 minute.Thank you for Joining our Platform , We Are Greatful To you`);
 
         res.render("./clientSide/forgatePassResetPass")
         // res.json({ message: "OTP sent to your email" });
