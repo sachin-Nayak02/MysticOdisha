@@ -201,7 +201,7 @@ res.redirect("/mysticodisha/user")
 });
 
 
-  app.get("https://sachin-nayak02.github.io/MysticOdisha/",async(req,res,next)=>{
+  app.get("/",async(req,res,next)=>{
 
     let dists=["Bargarh", "Balangir", "Sonepur", "Jharsuguda", "Sambalpur", "Deogarh", "Nuapada", "Kalahandi", "Mayurbhanj", "Keonjhar", "Sundargarh", "Dhenkanal", "Angul", "Boudh","Balasore","Bhadrak", "Jagatsinghpur","Jajpur","Kendrapara","Khordha","Puri","Cuttack","Nayagarh","Ganjam","Gajapati","Kandhamal","Rayagada","Koraput","Nabarangpur","Malkangiri"];
     let index=Math.floor(Math.random()*30)+1
@@ -637,7 +637,7 @@ app.post("/BackendAddDist",wrapAsync(async(req,res,next)=>{
 app.get("/dist/:id/edit",async(req,res,next)=>{
     let {id}=req.params;
     let result=await Dist.findById(id);
-    res.render("editDist.ejs",{result})
+    res.render("editDist.ejs",{result}) 
     
 })
 
@@ -668,10 +668,17 @@ app.get('*',(req,res,next)=>{
     // next( new ExpressError(401,"Sorry,Page Not Found"));
     res.render("./clientSide/pagenotfound.ejs")
 })
-app.use((err,req,res,next)=>{
-      let {status=500,message="client side error"}=err;
-      res.status(status).render("error.ejs",{message})
-})
+app.use((err, req, res, next) => {
+    // Default error status and message
+    const status = err.status || 500;
+    const message = err.message || "Internal Server Error";
+
+    // Render the error page
+    res.status(status).render('./clientSide/pagenotfound.ejs', {
+        status: status,
+        message: message
+    });
+});
 const PORT = process.env.PORT || 3030;
 app.listen(PORT,()=>{
     console.log(`app listing on port ${PORT}`);
