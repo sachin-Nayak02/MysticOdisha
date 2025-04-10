@@ -24,6 +24,8 @@ Follow these steps to install and run Mystic Odisha on your local machine at por
 
 Prerequisites
 
+first import the json file form the folder " A updated DATABASE Mongo DB " and set the json files in mongodb commpass of mysticodisha database to theire corresponding names
+
 Ensure you have the following installed:
 
 Node.js (Latest LTS version) – https://nodejs.org/en
